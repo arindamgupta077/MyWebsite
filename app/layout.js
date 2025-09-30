@@ -10,9 +10,20 @@ import "./css/globals.scss";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "Portfolio of Abu Said - Software Developer",
+  title: "Portfolio of Arindam Gupta - Oracle Database Administrator",
   description:
-    "This is the portfolio of Abu Said. I am a full stack developer and a self taught developer. I love to learn new things and I am always open to collaborating with others. I am a quick learner and I am always looking for new challenges.",
+    "This is the portfolio of Arindam Gupta. I am an experienced Oracle Database Administrator with expertise in Oracle Cloud Infrastructure, Oracle RAC, Oracle DataGuard, Oracle Autonomous Database, and Oracle APEX. I am passionate about database optimization, GenAI, and Data Engineering.",
+  // Explicitly declare favicon so it reliably appears (Next.js also auto-detects app/favicon.ico, but this is deterministic)
+  icons: {
+    icon: [
+      { url: '/favicon.ico' },
+      { url: '/icon.svg', type: 'image/svg+xml' },
+    ],
+    apple: [
+      { url: '/icon-192.png', sizes: '192x192' },
+      { url: '/icon-512.png', sizes: '512x512' }
+    ]
+  }
 };
 
 export default function RootLayout({ children }) {

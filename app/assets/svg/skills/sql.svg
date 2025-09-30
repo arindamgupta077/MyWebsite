@@ -1,0 +1,17 @@
+<svg width="256" height="256" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="256" height="256" rx="60" fill="#336791"/>
+<rect x="40" y="70" width="176" height="116" rx="8" fill="white"/>
+<rect x="48" y="78" width="160" height="12" fill="#336791"/>
+<rect x="48" y="98" width="160" height="2" fill="#E6E6E6"/>
+<rect x="48" y="108" width="160" height="2" fill="#E6E6E6"/>
+<rect x="48" y="118" width="160" height="2" fill="#E6E6E6"/>
+<rect x="48" y="128" width="160" height="2" fill="#E6E6E6"/>
+<rect x="48" y="138" width="160" height="2" fill="#E6E6E6"/>
+<rect x="48" y="148" width="160" height="2" fill="#E6E6E6"/>
+<rect x="48" y="158" width="160" height="2" fill="#E6E6E6"/>
+<rect x="48" y="168" width="160" height="2" fill="#E6E6E6"/>
+<circle cx="60" cy="84" r="3" fill="white"/>
+<circle cx="72" cy="84" r="3" fill="white"/>
+<circle cx="84" cy="84" r="3" fill="white"/>
+<text x="128" y="215" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="20" font-weight="bold">SQL</text>
+</svg>

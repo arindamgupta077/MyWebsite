@@ -83,6 +83,14 @@ import linux from '../app/assets/svg/skills/linux.svg'
 import sqlalchemy from '../app/assets/svg/skills/sqlalchemy.svg'
 import fastapi from '../app/assets/svg/skills/fastapi.svg'
 
+// New Oracle and Database related icons
+import oracle from '../app/assets/svg/skills/oracle.svg';
+import sql from '../app/assets/svg/skills/sql.svg';
+import plsql from '../app/assets/svg/skills/plsql.svg';
+import shell from '../app/assets/svg/skills/shell.svg';
+import genai from '../app/assets/svg/skills/genai.svg';
+import dataengineering from '../app/assets/svg/skills/dataengineering.svg';
+
 
 
 export const skillsImage = (skill) => {
@@ -254,6 +262,34 @@ export const skillsImage = (skill) => {
       return sqlalchemy;
     case 'fastapi':
       return fastapi;
+    case 'oracle database':
+      return oracle;
+    case 'oracle cloud infrastructure':
+      return oracle;
+    case 'oracle rac':
+      return oracle;
+    case 'oracle dataguard':
+      return oracle;
+    case 'oracle autonomous database':
+      return oracle;
+    case 'oracle apex':
+      return oracle;
+    case 'sql':
+      return sql;
+    case 'pl/sql':
+      return plsql;
+    case 'shell scripting':
+      return shell;
+    case 'genai':
+      return genai;
+    case 'data engineering':
+      return dataengineering;
+    case 'database performance tuning':
+      return oracle;
+    case 'database security':
+      return oracle;
+    case 'backup & recovery':
+      return oracle;
     default:
       break;
   }

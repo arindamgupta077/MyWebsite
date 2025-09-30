@@ -1,20 +1,26 @@
 export const educations = [
   {
     id: 1,
-    title: "Bachelor Degree",
-    duration: "2020 - Present",
-    institution: "National University of Bangladesh",
+    title: "Bachelor of Technology in Electronics & Communication Engineering",
+    duration: "2016 - 2020",
+    institution: "Meghnad Saha Institute of Technology",
   },
   {
     id: 2,
-    title: "Higher Secondary Certificate",
-    duration: "2018 - 2020",
-    institution: "Noakhali Islamia Kamil Madrasah",
+    title: "Oracle Certified Professional (OCP)",
+    duration: "2021",
+    institution: "Oracle University",
   },
   {
     id: 3,
-    title: "Secondary School Certificate",
-    duration: "2008 - 2018",
-    institution: "Baitus Saif Islamia Madrasah",
+    title: "Oracle Cloud Infrastructure Certified",
+    duration: "2022",
+    institution: "Oracle University",
+  },
+  {
+    id: 4,
+    title: "Higher Secondary Certificate",
+    duration: "2014 - 2016",
+    institution: "ABC Higher Secondary School",
   }
 ]
