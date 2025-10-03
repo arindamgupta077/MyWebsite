@@ -23,14 +23,6 @@ module.exports = {
       },
     ],
   },
-  // Performance optimizations for production
-  poweredByHeader: false,
-  generateEtags: false,
-  compress: true,
-  // Environment variable configuration
-  env: {
-    CUSTOM_KEY: process.env.CUSTOM_KEY,
-  },
-  // Output configuration for Render
-  output: 'standalone',
+  // Disable strict mode that can cause issues with some third-party libraries
+  reactStrictMode: false,
 }
