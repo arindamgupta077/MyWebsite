@@ -13,22 +13,33 @@ function AboutSection() {
         </span>
         <span className="h-36 w-[2px] bg-[#1a1443]"></span>
       </div>
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16">
+      
+      {/* Mobile section title */}
+      <div className="lg:hidden mb-8">
+        <div className="flex items-center justify-start relative">
+          <span className="bg-[#1a1443] w-fit text-white px-5 py-3 text-lg rounded-md">
+            ABOUT ME
+          </span>
+          <span className="w-full h-[2px] bg-[#1a1443] ml-4"></span>
+        </div>
+      </div>
+
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-16">
         <div className="order-2 lg:order-1">
-          <p className="font-medium mb-5 text-[#16f2b3] text-xl uppercase">
+          <p className="font-medium mb-4 sm:mb-5 text-[#16f2b3] text-lg sm:text-xl uppercase">
             Who I am?
           </p>
-          <p className="text-gray-200 text-sm lg:text-lg">
+          <p className="text-gray-200 text-sm sm:text-base lg:text-lg leading-relaxed">
             {personalData.description}
           </p>
         </div>
         <div className="flex justify-center order-1 lg:order-2">
           <Image
             src={personalData.profile}
-            width={280}
-            height={280}
+            width={240}
+            height={240}
             alt="Arindam Gupta"
-            className="rounded-lg transition-all duration-1000 grayscale hover:grayscale-0 hover:scale-110 cursor-pointer"
+            className="rounded-lg transition-all duration-1000 grayscale hover:grayscale-0 hover:scale-110 cursor-pointer w-[200px] h-[200px] sm:w-[240px] sm:h-[240px] lg:w-[280px] lg:h-[280px] object-cover"
           />
         </div>
       </div>

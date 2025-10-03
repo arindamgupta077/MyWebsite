@@ -2,7 +2,7 @@ export const projectsData = [
     {
         id: 1,
         name: 'Enterprise Oracle RAC Implementation',
-        description: "Led the implementation of Oracle Real Application Clusters (RAC) for a large enterprise client. Designed and configured a high-availability database infrastructure using Oracle RAC 19c with automatic failover capabilities. Implemented Oracle DataGuard for disaster recovery, ensuring 99.9% uptime. The project involved setting up shared storage, configuring cluster interconnects, and optimizing performance for mission-critical applications.",
+    description: "Implemented Oracle RAC 19c with Data Guard for HA & DR; configured shared storage, cluster interconnects and tuned performance to deliver 99.9% uptime.",
         tools: ['Oracle RAC', 'Oracle DataGuard', 'Oracle ASM', 'Linux', 'Shell Scripting', 'Oracle Enterprise Manager', 'Oracle Grid Infrastructure'],
         role: 'Lead Oracle DBA',
         code: '',
@@ -11,7 +11,7 @@ export const projectsData = [
     {
         id: 2,
         name: 'Oracle Cloud Migration Project',
-        description: 'Successfully migrated on-premises Oracle databases to Oracle Cloud Infrastructure (OCI). Utilized Oracle Autonomous Database for improved performance and reduced administrative overhead. Implemented automated backup strategies and configured Oracle APEX applications in the cloud environment. The migration resulted in 40% cost reduction and improved scalability for the client.',
+    description: 'Migrated on‑prem Oracle DBs to OCI using Autonomous DB & APEX; automated backups, improved scalability, and cut costs by ~40%.',
         tools: ['Oracle Cloud Infrastructure', 'Oracle Autonomous Database', 'Oracle APEX', 'Oracle Data Pump', 'Oracle GoldenGate', 'OCI CLI', 'Terraform'],
         role: 'Oracle Cloud Specialist',
         code: '',
@@ -20,7 +20,7 @@ export const projectsData = [
     {
         id: 3,
         name: 'AI-Powered Database Performance Optimization',
-        description: 'Developed an AI-powered solution for Oracle database performance monitoring and optimization. Created machine learning models to predict performance bottlenecks and automatically tune database parameters. Integrated Oracle Enterprise Manager with custom Python scripts to provide intelligent recommendations for query optimization and resource allocation.',
+    description: 'Built ML-based Oracle performance tuner predicting bottlenecks and recommending query & parameter optimizations via OEM + Python scripts.',
         tools: ['Oracle Database', 'Python', 'Machine Learning', 'Oracle Enterprise Manager', 'SQL Tuning Advisor', 'Oracle AWR', 'Pandas', 'Scikit-learn'],
         code: '',
         role: 'Database Performance Engineer',
@@ -29,7 +29,7 @@ export const projectsData = [
     {
         id: 4,
         name: 'Data Engineering Pipeline with Oracle',
-        description: "Built a comprehensive data engineering pipeline using Oracle technologies for real-time data processing. Implemented Oracle GoldenGate for real-time data replication, created ETL processes using Oracle Data Integrator, and developed data visualization dashboards using Oracle Analytics Cloud. The solution processes over 1TB of data daily with sub-second latency.",
+    description: "Engineered real-time data pipeline: GoldenGate replication, ODI ETL, analytics dashboards; processes >1TB/day with sub-second latency.",
         tools: ['Oracle GoldenGate', 'Oracle Data Integrator', 'Oracle Analytics Cloud', 'Oracle Streams', 'PL/SQL', 'Oracle Warehouse Builder'],
         code: '',
         demo: '',
