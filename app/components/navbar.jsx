@@ -11,6 +11,11 @@ function Navbar() {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
       setIsAtTop(currentScrollY <= 20);
+      
+      // Close mobile menu when scrolling
+      if (isMobileMenuOpen) {
+        setIsMobileMenuOpen(false);
+      }
     };
 
     const handleClickOutside = (event) => {
@@ -64,7 +69,7 @@ function Navbar() {
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 transform ${
       isAtTop ? 'translate-y-0' : '-translate-y-full'
-    } bg-[#0d1224]/95 backdrop-blur-sm border-b border-[#1b2c68a0]`}>
+    } bg-[#0a0f1c]/98 backdrop-blur-md border-b border-[#1b2c68]/60 shadow-lg shadow-[#0d1224]/30`}>
       <div className="max-w-[92rem] mx-auto px-6 sm:px-12">
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center justify-between py-4 lg:py-6">
@@ -187,36 +192,44 @@ function Navbar() {
             {/* Hamburger Menu Button */}
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="relative w-8 h-8 flex flex-col justify-center items-center space-y-1 group"
+              className="relative w-10 h-10 flex flex-col justify-center items-center space-y-1 group bg-[#1b2c68]/20 hover:bg-[#1b2c68]/40 rounded-lg border border-[#1b2c68]/30 hover:border-[#16f2b3]/50 transition-all duration-300"
               aria-label="Toggle mobile menu"
             >
-              <span className={`block w-6 h-0.5 bg-white transition-all duration-300 ${
+              <span className={`block w-6 h-0.5 bg-white group-hover:bg-[#16f2b3] transition-all duration-300 ${
                 isMobileMenuOpen ? 'rotate-45 translate-y-1.5' : ''
               }`}></span>
-              <span className={`block w-6 h-0.5 bg-white transition-all duration-300 ${
+              <span className={`block w-6 h-0.5 bg-white group-hover:bg-[#16f2b3] transition-all duration-300 ${
                 isMobileMenuOpen ? 'opacity-0' : ''
               }`}></span>
-              <span className={`block w-6 h-0.5 bg-white transition-all duration-300 ${
+              <span className={`block w-6 h-0.5 bg-white group-hover:bg-[#16f2b3] transition-all duration-300 ${
                 isMobileMenuOpen ? '-rotate-45 -translate-y-1.5' : ''
               }`}></span>
+              
+              {/* Subtle glow effect on hover */}
+              <div className="absolute inset-0 rounded-lg bg-gradient-to-r from-[#16f2b3]/10 to-[#00d4ff]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             </button>
           </div>
 
           {/* Mobile Menu Dropdown */}
-          <div className={`absolute top-full left-0 right-0 bg-[#0d1224] border-b border-[#1b2c68a0] transform transition-all duration-300 ${
+          <div className={`absolute top-full left-0 right-0 bg-[#0a0f1c] backdrop-blur-md border border-[#1b2c68]/50 shadow-2xl shadow-[#0d1224]/50 transform transition-all duration-300 ${
             isMobileMenuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-2 pointer-events-none'
           }`}>
-            <div className="px-6 py-4 space-y-2">
+            <div className="px-6 py-6 space-y-3">
               {menuItems.map((item, index) => (
                 <button
                   key={index}
                   onClick={() => handleNavClick(item.href)}
-                  className="block w-full text-left px-4 py-3 text-white hover:text-[#16f2b3] hover:bg-[#1b2c68a0] rounded-lg transition-all duration-300 border border-transparent hover:border-[#16f2b3]/20"
+                  className="group block w-full text-left px-5 py-4 text-white hover:text-[#16f2b3] bg-gradient-to-r from-transparent to-transparent hover:from-[#16f2b3]/10 hover:to-[#00d4ff]/5 rounded-xl transition-all duration-300 border border-[#1b2c68]/30 hover:border-[#16f2b3]/50 relative overflow-hidden"
                 >
-                  {item.label}
+                  <span className="relative z-10 font-medium tracking-wide">{item.label}</span>
+                  <div className="absolute inset-0 bg-gradient-to-r from-[#16f2b3]/5 to-[#00d4ff]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-[#16f2b3] to-[#00d4ff] group-hover:w-full transition-all duration-300"></div>
                 </button>
               ))}
             </div>
+            
+            {/* Decorative gradient line at bottom */}
+            <div className="h-1 bg-gradient-to-r from-transparent via-[#16f2b3] to-transparent opacity-30"></div>
           </div>
         </div>
       </div>
