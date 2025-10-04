@@ -95,63 +95,121 @@ function HeroSection() {
           </div>
           <div className="overflow-hidden border-t-[2px] border-indigo-900 px-4 lg:px-8 py-4 lg:py-8">
             <code className="font-mono text-xs md:text-sm lg:text-base">
-              <div className="blink">
-                <span className="text-pink-500 mr-2">--</span>
-                <span className="text-gray-400">Oracle DBA Profile (PL/SQL)</span>
-              </div>
               <div>
                 <span className="text-pink-500">DECLARE</span>
               </div>
               <div>
-                <span className="ml-4 lg:ml-8 mr-2 text-white">v_name</span>
+                <span className="ml-4 lg:ml-8 text-white">v_name</span>
                 <span className="text-pink-500"> VARCHAR2</span>
                 <span className="text-gray-400">(</span><span className="text-orange-400">50</span><span className="text-gray-400">)</span>
                 <span className="text-pink-500"> := </span>
                 <span className="text-gray-400">&apos;</span><span className="text-amber-300">Arindam Gupta</span><span className="text-gray-400">&apos;;</span>
               </div>
               <div>
-                <span className="ml-4 lg:ml-8 mr-2 text-white">TYPE</span>
-                <span className="text-pink-500 ml-2 mr-2">t_skill_tab</span>
-                <span className="text-pink-500">IS TABLE OF</span>
-                <span className="text-pink-500 ml-2">VARCHAR2</span>
-                <span className="text-gray-400">(</span><span className="text-orange-400">60</span><span className="text-gray-400">);</span>
-              </div>
-              <div>
-                <span className="ml-4 lg:ml-8 mr-2 text-white">v_skills</span>
-                <span className="text-pink-500"> t_skill_tab</span>
+                <span className="ml-4 lg:ml-8 text-white">v_role</span>
+                <span className="text-pink-500"> VARCHAR2</span>
+                <span className="text-gray-400">(</span><span className="text-orange-400">80</span><span className="text-gray-400">)</span>
                 <span className="text-pink-500"> := </span>
-                <span className="text-pink-500">t_skill_tab</span>
-                <span className="text-gray-400">(</span>
-              </div>
-              <div className="ml-8 lg:ml-16 text-amber-300">&apos;Oracle Database&apos;,&apos;Oracle Cloud&apos;,&apos;Oracle RAC&apos;,&apos;DataGuard&apos;,</div>
-              <div className="ml-8 lg:ml-16 text-amber-300">&apos;PL/SQL&apos;,&apos;Performance Tuning&apos;,&apos;APEX&apos;,&apos;GenAI&apos;,&apos;Data Engineering&apos;</div>
-              <div><span className="ml-4 lg:ml-8 text-gray-400">);</span></div>
-              <div>
-                <span className="ml-4 lg:ml-8 mr-2 text-white">FUNCTION</span>
-                <span className="text-pink-500 ml-2 mr-2">is_hireable</span>
-                <span className="text-pink-500">RETURN BOOLEAN</span>
-                <span className="text-gray-400"> IS</span>
+                <span className="text-gray-400">&apos;</span><span className="text-amber-300">Oracle DBA | Data Engineer</span><span className="text-gray-400">&apos;;</span>
               </div>
               <div>
-                <span className="ml-8 lg:ml-16 text-pink-500">BEGIN</span>
-              </div>
-              <div>
-                <span className="ml-12 lg:ml-24 text-pink-500">RETURN</span>
-                <span className="ml-2 text-cyan-400">v_skills</span>
-                <span className="text-gray-400">.</span>
-                <span className="text-white">COUNT</span>
-                <span className="ml-2 text-amber-300">&gt;=</span>
-                <span className="ml-2 text-orange-400">8</span>
+                <span className="ml-4 lg:ml-8 text-white">v_exp</span>
+                <span className="text-pink-500"> NUMBER</span>
+                <span className="text-pink-500"> := </span>
+                <span className="text-orange-400">5</span>
                 <span className="text-gray-400">;</span>
               </div>
               <div>
-                <span className="ml-8 lg:ml-16 text-pink-500">END</span>
-                <span className="ml-2 text-white"> is_hireable</span>
+                <span className="ml-4 lg:ml-8 text-white">TYPE </span>
+                <span className="text-pink-500">t_skill_tab </span>
+                <span className="text-pink-500">IS TABLE OF </span>
+                <span className="text-pink-500">VARCHAR2</span>
+                <span className="text-gray-400">(</span><span className="text-orange-400">60</span><span className="text-gray-400">);</span>
+              </div>
+              <div>
+                <span className="ml-4 lg:ml-8 text-white">v_skills</span>
+                <span className="text-pink-500"> t_skill_tab </span>
+                <span className="text-pink-500">:= </span>
+                <span className="text-pink-500">t_skill_tab</span>
+                <span className="text-gray-400">(</span>
+              </div>
+              <div className="ml-8 lg:ml-16">
+                <span className="text-gray-400">&apos;</span><span className="text-amber-300">RAC</span><span className="text-gray-400">&apos;, &apos;</span><span className="text-amber-300">DataGuard</span><span className="text-gray-400">&apos;, &apos;</span><span className="text-amber-300">OCI</span><span className="text-gray-400">&apos;, &apos;</span><span className="text-amber-300">Performance Tuning</span><span className="text-gray-400">&apos;,</span>
+              </div>
+              <div className="ml-8 lg:ml-16">
+                <span className="text-gray-400">&apos;</span><span className="text-amber-300">PLSQL</span><span className="text-gray-400">&apos;, &apos;</span><span className="text-amber-300">RMAN</span><span className="text-gray-400">&apos;, &apos;</span><span className="text-amber-300">EXPDP</span><span className="text-gray-400">&apos;, &apos;</span><span className="text-amber-300">Migration</span><span className="text-gray-400">&apos;, &apos;</span><span className="text-amber-300">Patching & Upgrade</span><span className="text-gray-400">&apos;</span>
+              </div>
+              <div>
+                <span className="ml-4 lg:ml-8 text-gray-400">);</span>
+              </div>
+              <div>
+                <span className="ml-4 lg:ml-8 text-white">FUNCTION </span>
+                <span className="text-pink-500">is_hireable </span>
+                <span className="text-pink-500">RETURN VARCHAR2</span>
+                <span className="text-gray-400"> IS</span>
+              </div>
+              <div>
+                <span className="ml-4 lg:ml-8 text-pink-500">BEGIN</span>
+              </div>
+              <div>
+                <span className="ml-8 lg:ml-12 text-pink-500">RETURN </span>
+                <span className="text-pink-500">CASE WHEN </span>
+                <span className="text-cyan-400">v_exp </span>
+                <span className="text-amber-300">&gt;= </span>
+                <span className="text-orange-400">5 </span>
+                <span className="text-pink-500">AND </span>
+                <span className="text-cyan-400">v_skills</span>
+                <span className="text-gray-400">.</span>
+                <span className="text-white">COUNT </span>
+                <span className="text-amber-300">&gt;= </span>
+                <span className="text-orange-400">5</span>
+              </div>
+              <div>
+                <span className="ml-12 lg:ml-16 text-pink-500">THEN </span>
+                <span className="text-gray-400">&apos;</span><span className="text-amber-300">✅ Highly Hireable</span><span className="text-gray-400">&apos; </span>
+                <span className="text-pink-500">ELSE </span>
+                <span className="text-gray-400">&apos;</span><span className="text-amber-300">⚙️ Growing Professional</span><span className="text-gray-400">&apos; </span>
+                <span className="text-pink-500">END</span>
+                <span className="text-gray-400">;</span>
+              </div>
+              <div>
+                <span className="ml-4 lg:ml-8 text-pink-500">END</span>
                 <span className="text-gray-400">;</span>
               </div>
               <div>
                 <span className="text-pink-500">BEGIN</span>
-                <span className="ml-2 text-gray-400">NULL;</span>
+              </div>
+              <div>
+                <span className="ml-4 lg:ml-8 text-white">DBMS_OUTPUT</span>
+                <span className="text-gray-400">.</span>
+                <span className="text-pink-500">PUT_LINE</span>
+                <span className="text-gray-400">(</span><span className="text-gray-400">&apos;</span><span className="text-amber-300">👨‍💻 </span><span className="text-gray-400">&apos; </span>
+                <span className="text-amber-300">|| </span>
+                <span className="text-cyan-400">v_name </span>
+                <span className="text-amber-300">|| </span>
+                <span className="text-gray-400">&apos;</span><span className="text-amber-300"> - </span><span className="text-gray-400">&apos; </span>
+                <span className="text-amber-300">|| </span>
+                <span className="text-cyan-400">v_role</span>
+                <span className="text-gray-400">);</span>
+              </div>
+              <div>
+                <span className="ml-4 lg:ml-8 text-white">DBMS_OUTPUT</span>
+                <span className="text-gray-400">.</span>
+                <span className="text-pink-500">PUT_LINE</span>
+                <span className="text-gray-400">(</span><span className="text-gray-400">&apos;</span><span className="text-amber-300">Exp: </span><span className="text-gray-400">&apos; </span>
+                <span className="text-amber-300">|| </span>
+                <span className="text-cyan-400">v_exp </span>
+                <span className="text-amber-300">|| </span>
+                <span className="text-gray-400">&apos;</span><span className="text-amber-300"> yrs | Skills: </span><span className="text-gray-400">&apos; </span>
+                <span className="text-amber-300">|| </span>
+                <span className="text-cyan-400">v_skills</span>
+                <span className="text-gray-400">.</span>
+                <span className="text-white">COUNT </span>
+                <span className="text-amber-300">|| </span>
+                <span className="text-gray-400">&apos;</span><span className="text-amber-300"> | Status: </span><span className="text-gray-400">&apos; </span>
+                <span className="text-amber-300">|| </span>
+                <span className="text-pink-500">is_hireable</span>
+                <span className="text-gray-400">);</span>
               </div>
               <div>
                 <span className="text-pink-500">END</span>

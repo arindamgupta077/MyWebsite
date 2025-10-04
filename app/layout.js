@@ -57,6 +57,40 @@ export default function RootLayout({ children }) {
                   }, 1000);
                 }
               });
+              
+              // Hide Next.js development indicators
+              if (typeof window !== 'undefined') {
+                const hideDevIndicators = () => {
+                  const style = document.createElement('style');
+                  style.textContent = \`
+                    [data-nextjs-dialog], 
+                    [data-nextjs-dialog-overlay],
+                    [data-nextjs-toast],
+                    .__next-dev-overlay,
+                    .__next-build-indicator,
+                    #__next-build-watcher,
+                    nextjs-portal,
+                    [id^="__next-build"],
+                    [class*="__next-dev"],
+                    [data-nextjs-dev-overlay] {
+                      display: none !important;
+                      visibility: hidden !important;
+                      pointer-events: none !important;
+                    }
+                  \`;
+                  document.head.appendChild(style);
+                };
+                
+                if (document.readyState === 'loading') {
+                  document.addEventListener('DOMContentLoaded', hideDevIndicators);
+                } else {
+                  hideDevIndicators();
+                }
+                
+                // Also hide on subsequent renders
+                const observer = new MutationObserver(hideDevIndicators);
+                observer.observe(document.body, { childList: true, subtree: true });
+              }
             `,
           }}
         />
@@ -64,8 +98,8 @@ export default function RootLayout({ children }) {
       <body className={inter.className}>
         <ErrorBoundary>
           <ToastProvider />
-          <main className="min-h-screen relative mx-auto px-6 sm:px-12 lg:max-w-[70rem] xl:max-w-[76rem] 2xl:max-w-[92rem] text-white">
-            <Navbar />
+          <Navbar />
+          <main className="min-h-screen relative mx-auto px-6 sm:px-12 lg:max-w-[70rem] xl:max-w-[76rem] 2xl:max-w-[92rem] text-white pt-20">
             {children}
             <ScrollToTop />
           </main>

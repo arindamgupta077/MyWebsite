@@ -12,6 +12,10 @@
   }
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   color: rgb(var(--foreground-rgb));
   background-color: #0d1224;
@@ -39,6 +43,74 @@ p, span, div[class*="text"], input, textarea {
 /* Smooth scrolling */
 html {
   scroll-behavior: smooth;
+}
+
+/* Mobile-optimized touch targets */
+.touch-manipulation {
+  touch-action: manipulation;
+}
+
+/* Hide scrollbar utility class */
+.scrollbar-hide {
+  /* Hide scrollbar for IE, Edge and Firefox */
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* Skills section mobile enhancements */
+@media (max-width: 768px) {
+  #skills {
+    /* Better touch scrolling */
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  /* Mobile skills container */
+  #skills .overflow-x-auto {
+    /* Smooth momentum scrolling */
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+    
+    /* Enable scroll snapping */
+    scroll-snap-type: x mandatory;
+  }
+  
+  /* Improve skill card interactions on mobile */
+  #skills .group {
+    transition: transform 0.2s ease;
+  }
+  
+  #skills .group:active {
+    transform: scale(0.95);
+  }
+  
+  /* Add subtle shadows on mobile for better depth perception */
+  #skills .group > div {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  }
+}
+
+/* Improved button sizing for mobile */
+@media (max-width: 640px) {
+  button, a[role="button"] {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  /* Apps section mobile optimizations */
+  #apps .grid {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+  
+  /* Better spacing for mobile cards */
+  .app-card {
+    margin-bottom: 1rem;
+  }
 }
 
 /* Custom scrollbar for mobile */
@@ -84,6 +156,52 @@ html {
 }
 
 .sticky-card {
-  // padding-top: calc(var(--index) * 2.5rem);
-  top: calc(var(--index) * 4rem);
+  top: calc(var(--index) * 2rem);
+  min-height: fit-content;
+  position: sticky;
+  z-index: var(--index);
+}
+
+/* Desktop-specific improvements */
+@media (min-width: 769px) {
+  .sticky-card {
+    top: calc(var(--index) * 1.5rem);
+  }
+  
+  /* Ensure cards don't get cut off on larger screens */
+  .sticky-card:last-child {
+    margin-bottom: 4rem;
+  }
+}
+
+/* Hide Next.js development indicators */
+[data-nextjs-dialog], 
+[data-nextjs-dialog-overlay],
+[data-nextjs-toast],
+.__next-dev-overlay-error-toast,
+#__next-build-watcher,
+nextjs-portal,
+[id^="__next-build"],
+[class*="__next-dev"],
+[data-nextjs-dev-overlay] {
+  display: none !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+
+/* Hide specific development buttons and overlays */
+button[title*="Next"],
+div[class*="nextjs"],
+div[style*="position: fixed"][style*="bottom"],
+div[style*="position: fixed"][style*="z-index: 9999"] {
+  display: none !important;
+}
+
+/* More specific targeting for development overlay */
+.__next-dev-overlay {
+  display: none !important;
+}
+
+.__next-build-indicator {
+  display: none !important;
 }
