@@ -61,8 +61,9 @@ function Navbar() {
     { label: 'About', href: '#about' },
     { label: 'Experience', href: '#experience' },
     { label: 'Skills', href: '#skills' },
-    { label: 'Education', href: '#education' },
+    { label: 'My Apps', href: '#apps' },
     { label: 'Projects', href: '#projects' },
+    { label: 'Education', href: '#education' },
     { label: 'Contact', href: '#contact' }
   ];
 

@@ -16,7 +16,7 @@ export const appsData = [
         description: 'TrackExp is an all-in-one personal finance web app that helps you track expenses, manage budgets, and gain smart insights into your spending with AI-powered guidance.',
         githubUrl: 'https://github.com/arindamgupta077/expensebyag.git',
         liveUrl: 'https://www.trackexp.in/',
-        thumbnail: '/image/screen.jpg',
+        thumbnail: '/image/screen.gif',
         technologies: ['PostgreSQL Database', 'React.js', 'Tailwind CSS', 'TypeScript', 'Render'],
         category: 'Web Application',
         featured: true
