@@ -107,7 +107,7 @@ function HeroSection() {
                 <span className="text-pink-500"> VARCHAR2</span>
                 <span className="text-gray-400">(</span><span className="text-orange-400">50</span><span className="text-gray-400">)</span>
                 <span className="text-pink-500"> := </span>
-                <span className="text-gray-400">'</span><span className="text-amber-300">Arindam Gupta</span><span className="text-gray-400">';</span>
+                <span className="text-gray-400">&apos;</span><span className="text-amber-300">Arindam Gupta</span><span className="text-gray-400">&apos;;</span>
               </div>
               <div>
                 <span className="ml-4 lg:ml-8 mr-2 text-white">TYPE</span>
@@ -123,8 +123,8 @@ function HeroSection() {
                 <span className="text-pink-500">t_skill_tab</span>
                 <span className="text-gray-400">(</span>
               </div>
-              <div className="ml-8 lg:ml-16 text-amber-300">'Oracle Database','Oracle Cloud','Oracle RAC','DataGuard',</div>
-              <div className="ml-8 lg:ml-16 text-amber-300">'PL/SQL','Performance Tuning','APEX','GenAI','Data Engineering'</div>
+              <div className="ml-8 lg:ml-16 text-amber-300">&apos;Oracle Database&apos;,&apos;Oracle Cloud&apos;,&apos;Oracle RAC&apos;,&apos;DataGuard&apos;,</div>
+              <div className="ml-8 lg:ml-16 text-amber-300">&apos;PL/SQL&apos;,&apos;Performance Tuning&apos;,&apos;APEX&apos;,&apos;GenAI&apos;,&apos;Data Engineering&apos;</div>
               <div><span className="ml-4 lg:ml-8 text-gray-400">);</span></div>
               <div>
                 <span className="ml-4 lg:ml-8 mr-2 text-white">FUNCTION</span>

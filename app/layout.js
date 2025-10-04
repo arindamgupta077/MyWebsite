@@ -30,6 +30,37 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              // Global chunk loading error handler
+              window.addEventListener('error', function(event) {
+                if (event.error?.name === 'ChunkLoadError' || 
+                    event.error?.message?.includes('Loading chunk') ||
+                    event.error?.message?.includes('timeout')) {
+                  console.warn('Chunk loading error detected, reloading page...');
+                  setTimeout(function() {
+                    window.location.reload();
+                  }, 1000);
+                }
+              });
+              
+              window.addEventListener('unhandledrejection', function(event) {
+                if (event.reason?.name === 'ChunkLoadError' ||
+                    event.reason?.message?.includes('Loading chunk') ||
+                    event.reason?.message?.includes('timeout')) {
+                  console.warn('Unhandled chunk loading rejection detected');
+                  event.preventDefault();
+                  setTimeout(function() {
+                    window.location.reload();
+                  }, 1000);
+                }
+              });
+            `,
+          }}
+        />
+      </head>
       <body className={inter.className}>
         <ErrorBoundary>
           <ToastProvider />

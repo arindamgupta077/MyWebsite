@@ -16,11 +16,10 @@ function AboutSection() {
       
       {/* Mobile section title */}
       <div className="lg:hidden mb-8">
-        <div className="flex items-center justify-start relative">
-          <span className="bg-[#1a1443] w-fit text-white px-5 py-3 text-lg rounded-md">
+        <div className="flex items-center justify-center relative">
+          <span className="bg-[#1a1443] w-fit text-white px-3 py-2 text-sm font-medium rounded-md whitespace-nowrap">
             ABOUT ME
           </span>
-          <span className="w-full h-[2px] bg-[#1a1443] ml-4"></span>
         </div>
       </div>
 
@@ -37,9 +36,9 @@ function AboutSection() {
           <Image
             src={personalData.profile}
             width={240}
-            height={240}
+            height={360}
             alt="Arindam Gupta"
-            className="rounded-lg transition-all duration-1000 grayscale hover:grayscale-0 hover:scale-110 cursor-pointer w-[200px] h-[200px] sm:w-[240px] sm:h-[240px] lg:w-[280px] lg:h-[280px] object-cover"
+            className="rounded-lg transition-all duration-1000 grayscale hover:grayscale-0 hover:scale-110 cursor-pointer w-[200px] h-[320px] sm:w-[240px] sm:h-[380px] lg:w-[280px] lg:h-[420px] object-cover"
           />
         </div>
       </div>

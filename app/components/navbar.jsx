@@ -59,6 +59,9 @@ function Navbar() {
           <li>
             <Link className="block px-4 py-2 no-underline outline-none hover:no-underline" href="/#projects" onClick={closeMenu}><div className="text-sm text-white transition-colors duration-300 hover:text-pink-600">PROJECTS</div></Link>
           </li>
+          <li>
+            <Link className="block px-4 py-2 no-underline outline-none hover:no-underline" href="/#apps" onClick={closeMenu}><div className="text-sm text-white transition-colors duration-300 hover:text-pink-600">MY APPS</div></Link>
+          </li>
         </ul>
 
         {/* Mobile menu overlay */}
@@ -108,6 +111,11 @@ function Navbar() {
             <li>
               <Link className="block px-6 py-3 no-underline outline-none hover:no-underline hover:bg-[#1b2c68a0]" href="/#projects" onClick={closeMenu}>
                 <div className="text-sm text-white transition-colors duration-300 hover:text-pink-600">PROJECTS</div>
+              </Link>
+            </li>
+            <li>
+              <Link className="block px-6 py-3 no-underline outline-none hover:no-underline hover:bg-[#1b2c68a0]" href="/#apps" onClick={closeMenu}>
+                <div className="text-sm text-white transition-colors duration-300 hover:text-pink-600">MY APPS</div>
               </Link>
             </li>
           </ul>

@@ -14,13 +14,6 @@ class ErrorBoundary extends Component {
 
   componentDidCatch(error, errorInfo) {
     console.error('Error Boundary caught an error:', error, errorInfo);
-    
-    // If it's a chunk loading error, try to reload the page
-    if (error?.name === 'ChunkLoadError' || error?.message?.includes('Loading chunk')) {
-      setTimeout(() => {
-        window.location.reload();
-      }, 1000);
-    }
   }
 
   render() {
@@ -32,11 +25,11 @@ class ErrorBoundary extends Component {
               Something went wrong
             </h2>
             <p className="text-gray-300 mb-6">
-              We're experiencing a temporary loading issue. The page will refresh automatically.
+              An unexpected error occurred. Please try refreshing the page.
             </p>
             <button
               onClick={() => window.location.reload()}
-              className="bg-gradient-to-r from-pink-500 to-violet-600 px-6 py-3 rounded-full text-white font-medium hover:from-pink-600 hover:to-violet-700 transition-all duration-300"
+              className="bg-gradient-to-r from-pink-500 to-violet-600 px-6 py-3 rounded-lg text-white font-medium hover:from-pink-600 hover:to-violet-700 transition-all duration-300"
             >
               Refresh Page
             </button>
