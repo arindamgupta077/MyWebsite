@@ -25,10 +25,6 @@ module.exports = {
   },
   // Enable React strict mode for better development experience
   reactStrictMode: true,
-  // Disable development indicators completely
-  devIndicators: {
-    appIsrStatus: false,
-  },
   // Turbopack configuration for better performance
   turbopack: {
     resolveExtensions: ['.tsx', '.ts', '.jsx', '.js'],

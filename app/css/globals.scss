@@ -12,10 +12,6 @@
   }
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
 body {
   color: rgb(var(--foreground-rgb));
   background-color: #0d1224;
@@ -204,4 +200,188 @@ div[style*="position: fixed"][style*="z-index: 9999"] {
 
 .__next-build-indicator {
   display: none !important;
+}
+
+/* Navbar animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.3s ease-out;
+}
+
+.animate-slideInRight {
+  animation: slideInRight 0.5s ease-out;
+}
+
+/* Mobile navbar improvements */
+@media (max-width: 768px) {
+  /* Better touch targets for mobile */
+  .mobile-nav-item {
+    min-height: 48px;
+    display: flex;
+    align-items: center;
+  }
+  
+  /* Smooth touch feedback */
+  .mobile-nav-item:active {
+    transform: scale(0.98);
+    transition: transform 0.1s ease;
+  }
+  
+  /* Mobile menu backdrop blur enhancement */
+  .mobile-backdrop {
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+  }
+  
+  /* Prevent body scroll when mobile menu is open */
+  body.mobile-menu-open {
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+  }
+}
+
+/* Premium Header Text Animations */
+@keyframes shimmer {
+  0% {
+    background-position: -100% 0;
+  }
+  100% {
+    background-position: 100% 0;
+  }
+}
+
+@keyframes glow-pulse {
+  0%, 100% {
+    filter: drop-shadow(0 0 10px rgba(22, 242, 179, 0.3));
+  }
+  50% {
+    filter: drop-shadow(0 0 25px rgba(22, 242, 179, 0.6));
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-2px);
+  }
+}
+
+@keyframes sparkle {
+  0%, 100% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Premium header text classes */
+.premium-header {
+  position: relative;
+  display: inline-block;
+}
+
+.premium-header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(90deg, 
+    transparent 0%, 
+    rgba(255, 255, 255, 0.1) 50%, 
+    transparent 100%);
+  background-size: 200% 100%;
+  animation: shimmer 3s infinite;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.premium-header:hover::before {
+  opacity: 1;
+}
+
+.premium-header:hover {
+  animation: float 2s ease-in-out infinite;
+}
+
+/* Sparkle effect */
+.premium-header::after {
+  content: '✦';
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  color: #16f2b3;
+  font-size: 12px;
+  animation: sparkle 2s infinite;
+  opacity: 0;
+}
+
+.premium-header:hover::after {
+  animation: sparkle 1.5s infinite;
+}
+
+/* Gradient text enhancement */
+.gradient-text {
+  background: linear-gradient(135deg, #16f2b3 0%, #00d4ff 25%, #ff6ec7 50%, #ffd700 75%, #16f2b3 100%);
+  background-size: 400% 400%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradient-shift 4s ease-in-out infinite;
+}
+
+@keyframes gradient-shift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* Luxury typography */
+.luxury-text {
+  font-family: 'Inter', 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-optical-sizing: auto;
+  font-variation-settings: "wght" 900;
+  letter-spacing: 0.1em;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }

@@ -1,189 +1,227 @@
-// @flow strict
-"use client";
-import Link from "next/link";
-import { useState, useEffect } from "react";
-import { HiMenuAlt3, HiX } from "react-icons/hi";
-import { FaCode } from "react-icons/fa";
+﻿'use client';
+
+import Link from 'next/link';
+import { useState, useEffect } from 'react';
 
 function Navbar() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [activeSection, setActiveSection] = useState('');
+  const [isAtTop, setIsAtTop] = useState(true);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
-
-  const closeMenu = () => {
-    setIsMenuOpen(false);
-  };
-
-  // Handle scroll effect
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+      const currentScrollY = window.scrollY;
+      setIsAtTop(currentScrollY <= 20);
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  // Handle active section detection
-  useEffect(() => {
-    const handleScroll = () => {
-      const sections = ['about', 'experience', 'skills', 'education', 'certification', 'projects', 'apps'];
-      const scrollPosition = window.scrollY + 100;
-
-      for (const section of sections) {
-        const element = document.getElementById(section);
-        if (element) {
-          const { offsetTop, offsetHeight } = element;
-          if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
-            setActiveSection(section);
-            break;
-          }
-        }
+    const handleClickOutside = (event) => {
+      if (isMobileMenuOpen && !event.target.closest('.mobile-menu-container')) {
+        setIsMobileMenuOpen(false);
       }
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    document.addEventListener('click', handleClickOutside);
+    
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      document.removeEventListener('click', handleClickOutside);
+    };
+  }, [isMobileMenuOpen]);
 
-  const navItems = [
-    { href: "/#about", label: "ABOUT", id: "about" },
-    { href: "/#experience", label: "EXPERIENCE", id: "experience" },
-    { href: "/#skills", label: "SKILLS", id: "skills" },
-    { href: "/#education", label: "EDUCATION", id: "education" },
-    { href: "/#certification", label: "CERTIFICATION", id: "certification" },
-    { href: "/#projects", label: "PROJECTS", id: "projects" },
-    { href: "/#apps", label: "MY APPS", id: "apps" },
+  const handleNavClick = (href) => {
+    // Extract the section ID from href (e.g., "#about" -> "about")
+    const sectionId = href.replace('#', '');
+    console.log('Navigating to section:', sectionId);
+    
+    // Add a small delay to ensure smooth scrolling works properly
+    setTimeout(() => {
+      const element = document.getElementById(sectionId);
+      console.log('Element found:', element);
+      if (element) {
+        const navHeight = 80; // Account for navbar height
+        const elementPosition = element.offsetTop - navHeight;
+        
+        window.scrollTo({
+          top: elementPosition,
+          behavior: 'smooth'
+        });
+      }
+    }, 100);
+    
+    // Close mobile menu after clicking
+    setIsMobileMenuOpen(false);
+  };
+
+  const menuItems = [
+    { label: 'About', href: '#about' },
+    { label: 'Experience', href: '#experience' },
+    { label: 'Skills', href: '#skills' },
+    { label: 'Education', href: '#education' },
+    { label: 'Projects', href: '#projects' },
+    { label: 'Contact', href: '#contact' }
   ];
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-      isScrolled 
-        ? 'bg-[#0d1224]/95 backdrop-blur-lg border-b border-[#1b2c68a0] shadow-lg' 
-        : 'bg-transparent'
-    }`}>
-      <div className="max-w-7xl mx-auto px-6 sm:px-12">
-        <div className="flex items-center justify-between py-4">
-          {/* Logo/Brand */}
+    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 transform ${
+      isAtTop ? 'translate-y-0' : '-translate-y-full'
+    } bg-[#0d1224]/95 backdrop-blur-sm border-b border-[#1b2c68a0]`}>
+      <div className="max-w-[92rem] mx-auto px-6 sm:px-12">
+        {/* Desktop Navigation */}
+        <div className="hidden md:flex items-center justify-between py-4 lg:py-6">
           <div className="flex flex-shrink-0 items-center">
             <Link
               href="/"
-              className="flex items-center space-x-2 group transition-all duration-300"
+              className="relative group cursor-pointer transform transition-all duration-700 hover:scale-105 premium-header"
             >
-              <div className="p-2 rounded-lg bg-gradient-to-r from-[#16f2b3] to-[#1e40af] group-hover:scale-110 transition-transform duration-300">
-                <FaCode className="text-white text-lg" />
-              </div>
-              <div className="flex flex-col">
-                <span className="text-[#16f2b3] text-lg sm:text-xl lg:text-2xl font-bold tracking-wide">
+              <div className="text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-black tracking-wider relative luxury-text">
+                {/* Main text with enhanced gradient and effects */}
+                <span className="gradient-text
+                               drop-shadow-[0_0_15px_rgba(22,242,179,0.4)] 
+                               hover:drop-shadow-[0_0_30px_rgba(22,242,179,0.7)]
+                               transition-all duration-700
+                               font-black tracking-[0.12em] lg:tracking-[0.18em]
+                               relative z-10">
                   ARINDAM GUPTA
                 </span>
-                <span className="text-gray-400 text-xs hidden sm:block">
-                  Oracle DBA & Data Engineer
+                
+                {/* Enhanced glow effect */}
+                <span className="absolute inset-0 gradient-text blur-sm opacity-30 
+                               group-hover:opacity-60 transition-all duration-700
+                               font-black tracking-[0.12em] lg:tracking-[0.18em]
+                               animate-pulse">
+                  ARINDAM GUPTA
                 </span>
+                
+                {/* Premium animated underline */}
+                <div className="absolute -bottom-3 left-0 right-0 h-[4px] 
+                              bg-gradient-to-r from-transparent via-[#16f2b3] via-[#00d4ff] to-transparent 
+                              opacity-0 group-hover:opacity-100 transition-all duration-700 
+                              transform scale-x-0 group-hover:scale-x-100 rounded-full
+                              shadow-[0_0_15px_rgba(22,242,179,0.5)]"></div>
+                
+                {/* Luxury side accents */}
+                <div className="absolute top-1/2 -left-12 w-8 h-[2px] 
+                              bg-gradient-to-r from-[#16f2b3] via-[#00d4ff] to-transparent 
+                              opacity-0 group-hover:opacity-100 transition-all duration-700 delay-150 
+                              transform -translate-y-1/2 -translate-x-4 group-hover:translate-x-0
+                              rounded-full shadow-[0_0_10px_rgba(22,242,179,0.4)]"></div>
+                <div className="absolute top-1/2 -right-12 w-8 h-[2px] 
+                              bg-gradient-to-l from-[#16f2b3] via-[#00d4ff] to-transparent 
+                              opacity-0 group-hover:opacity-100 transition-all duration-700 delay-150 
+                              transform -translate-y-1/2 translate-x-4 group-hover:translate-x-0
+                              rounded-full shadow-[0_0_10px_rgba(22,242,179,0.4)]"></div>
+                
+                {/* Floating particles effect */}
+                <div className="absolute -top-2 left-1/4 w-1 h-1 bg-[#16f2b3] rounded-full 
+                              opacity-0 group-hover:opacity-100 transition-all duration-1000 delay-300
+                              animate-bounce"></div>
+                <div className="absolute -top-1 right-1/3 w-1 h-1 bg-[#00d4ff] rounded-full 
+                              opacity-0 group-hover:opacity-100 transition-all duration-1000 delay-500
+                              animate-bounce" style={{animationDelay: '0.5s'}}></div>
+                <div className="absolute -bottom-2 right-1/4 w-1 h-1 bg-[#ff6ec7] rounded-full 
+                              opacity-0 group-hover:opacity-100 transition-all duration-1000 delay-700
+                              animate-bounce" style={{animationDelay: '1s'}}></div>
               </div>
             </Link>
           </div>
+          <ul className="flex flex-row items-center space-x-2 lg:space-x-4">
+            {menuItems.map((item, index) => (
+              <li key={index}>
+                <button
+                  onClick={() => handleNavClick(item.href)}
+                  className="group relative block px-3 lg:px-4 py-2 no-underline outline-none hover:no-underline bg-transparent border-none cursor-pointer"
+                >
+                  <div className="text-sm lg:text-base text-white transition-all duration-300 group-hover:text-[#16f2b3] relative">
+                    {item.label}
+                    <div className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-[#16f2b3] to-pink-500 group-hover:w-full transition-all duration-300"></div>
+                  </div>
+                </button>
+              </li>
+            ))}
+          </ul>
+        </div>
 
-          {/* Mobile menu button */}
-          <div className="md:hidden">
-            <button
-              onClick={toggleMenu}
-              className="p-2 rounded-lg bg-[#1b2c68a0] text-white hover:text-[#16f2b3] hover:bg-[#16f2b3]/10 transition-all duration-300 transform hover:scale-105"
-              aria-label="Toggle menu"
+        {/* Mobile Navigation */}
+        <div className="md:hidden mobile-menu-container">
+          <div className="flex items-center justify-between py-4">
+            <Link
+              href="/"
+              className="relative group cursor-pointer transform transition-all duration-700 hover:scale-105 premium-header"
             >
-              {isMenuOpen ? <HiX size={24} /> : <HiMenuAlt3 size={24} />}
+              <div className="text-lg sm:text-xl font-black tracking-wider relative luxury-text">
+                {/* Main text with enhanced gradient for mobile */}
+                <span className="gradient-text
+                               drop-shadow-[0_0_12px_rgba(22,242,179,0.4)] 
+                               hover:drop-shadow-[0_0_20px_rgba(22,242,179,0.6)]
+                               transition-all duration-700
+                               font-black tracking-[0.1em] sm:tracking-[0.12em]
+                               relative z-10">
+                  ARINDAM GUPTA
+                </span>
+                
+                {/* Enhanced glow effect for mobile */}
+                <span className="absolute inset-0 gradient-text blur-sm opacity-25 
+                               group-hover:opacity-50 transition-all duration-700
+                               font-black tracking-[0.1em] sm:tracking-[0.12em]
+                               animate-pulse">
+                  ARINDAM GUPTA
+                </span>
+                
+                {/* Premium underline for mobile */}
+                <div className="absolute -bottom-2 left-0 right-0 h-[3px] 
+                              bg-gradient-to-r from-transparent via-[#16f2b3] via-[#00d4ff] to-transparent 
+                              opacity-0 group-hover:opacity-100 transition-all duration-700 
+                              transform scale-x-0 group-hover:scale-x-100 rounded-full
+                              shadow-[0_0_10px_rgba(22,242,179,0.4)]"></div>
+                
+                {/* Mobile floating particles */}
+                <div className="absolute -top-1 left-1/4 w-0.5 h-0.5 bg-[#16f2b3] rounded-full 
+                              opacity-0 group-hover:opacity-100 transition-all duration-1000 delay-200
+                              animate-bounce"></div>
+                <div className="absolute -bottom-1 right-1/3 w-0.5 h-0.5 bg-[#ff6ec7] rounded-full 
+                              opacity-0 group-hover:opacity-100 transition-all duration-1000 delay-400
+                              animate-bounce" style={{animationDelay: '0.3s'}}></div>
+              </div>
+            </Link>
+            
+            {/* Hamburger Menu Button */}
+            <button
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className="relative w-8 h-8 flex flex-col justify-center items-center space-y-1 group"
+              aria-label="Toggle mobile menu"
+            >
+              <span className={`block w-6 h-0.5 bg-white transition-all duration-300 ${
+                isMobileMenuOpen ? 'rotate-45 translate-y-1.5' : ''
+              }`}></span>
+              <span className={`block w-6 h-0.5 bg-white transition-all duration-300 ${
+                isMobileMenuOpen ? 'opacity-0' : ''
+              }`}></span>
+              <span className={`block w-6 h-0.5 bg-white transition-all duration-300 ${
+                isMobileMenuOpen ? '-rotate-45 -translate-y-1.5' : ''
+              }`}></span>
             </button>
           </div>
 
-          {/* Desktop menu */}
-          <ul className="hidden md:flex md:flex-row md:space-x-1 bg-[#1b2c68a0]/50 backdrop-blur-sm rounded-full px-2 py-2">
-            {navItems.map((item) => (
-              <li key={item.id}>
-                <Link 
-                  className={`block px-4 py-2 rounded-full no-underline outline-none transition-all duration-300 ${
-                    activeSection === item.id
-                      ? 'bg-gradient-to-r from-[#16f2b3] to-[#1e40af] text-white shadow-lg'
-                      : 'hover:bg-[#16f2b3]/10 hover:text-[#16f2b3]'
-                  }`}
-                  href={item.href} 
-                  onClick={closeMenu}
+          {/* Mobile Menu Dropdown */}
+          <div className={`absolute top-full left-0 right-0 bg-[#0d1224] border-b border-[#1b2c68a0] transform transition-all duration-300 ${
+            isMobileMenuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-2 pointer-events-none'
+          }`}>
+            <div className="px-6 py-4 space-y-2">
+              {menuItems.map((item, index) => (
+                <button
+                  key={index}
+                  onClick={() => handleNavClick(item.href)}
+                  className="block w-full text-left px-4 py-3 text-white hover:text-[#16f2b3] hover:bg-[#1b2c68a0] rounded-lg transition-all duration-300 border border-transparent hover:border-[#16f2b3]/20"
                 >
-                  <div className="text-sm font-medium transition-colors duration-300">
-                    {item.label}
-                  </div>
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </div>
-
-      {/* Mobile menu overlay */}
-      {isMenuOpen && (
-        <div 
-          className="fixed inset-0 bg-black/60 backdrop-blur-sm z-40 md:hidden transition-opacity duration-300" 
-          onClick={closeMenu}
-        />
-      )}
-
-      {/* Mobile menu */}
-      <div className={`fixed top-0 right-0 h-full w-80 bg-[#0d1224]/95 backdrop-blur-lg border-l border-[#1b2c68a0] shadow-2xl transform transition-all duration-300 ease-in-out z-50 md:hidden ${
-        isMenuOpen ? 'translate-x-0' : 'translate-x-full'
-      }`}>
-        <div className="flex items-center justify-between p-6 border-b border-[#1b2c68a0]">
-          <div className="flex items-center space-x-2">
-            <div className="p-2 rounded-lg bg-gradient-to-r from-[#16f2b3] to-[#1e40af]">
-              <FaCode className="text-white text-lg" />
-            </div>
-            <span className="text-[#16f2b3] text-lg font-bold">Menu</span>
-          </div>
-          <button
-            onClick={closeMenu}
-            className="p-2 rounded-lg bg-[#1b2c68a0] text-white hover:text-[#16f2b3] hover:bg-[#16f2b3]/10 transition-all duration-300"
-          >
-            <HiX size={24} />
-          </button>
-        </div>
-        
-        <div className="p-4">
-          <ul className="flex flex-col space-y-2">
-            {navItems.map((item) => (
-              <li key={item.id}>
-                <Link 
-                  className={`flex items-center px-4 py-3 rounded-lg no-underline outline-none transition-all duration-300 group ${
-                    activeSection === item.id
-                      ? 'bg-gradient-to-r from-[#16f2b3] to-[#1e40af] text-white shadow-lg'
-                      : 'hover:bg-[#1b2c68a0] hover:translate-x-2'
-                  }`}
-                  href={item.href} 
-                  onClick={closeMenu}
-                >
-                  <div className="text-sm font-medium transition-colors duration-300">
-                    {item.label}
-                  </div>
-                  <div className="ml-auto opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <div className="w-2 h-2 rounded-full bg-[#16f2b3]" />
-                  </div>
-                </Link>
-              </li>
-            ))}
-          </ul>
-          
-          {/* Additional mobile menu footer */}
-          <div className="mt-8 pt-6 border-t border-[#1b2c68a0]">
-            <div className="text-center">
-              <p className="text-gray-400 text-sm">Oracle Database Professional</p>
-              <p className="text-[#16f2b3] text-xs mt-1">Building the future with data</p>
+                  {item.label}
+                </button>
+              ))}
             </div>
           </div>
         </div>
       </div>
     </nav>
   );
-};
+}
 
 export default Navbar;
