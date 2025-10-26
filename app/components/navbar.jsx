@@ -64,6 +64,7 @@ function Navbar() {
     { label: 'My Apps', href: '#apps' },
     { label: 'Projects', href: '#projects' },
     { label: 'Education', href: '#education' },
+    { label: 'Certification', href: '#certification' },
     { label: 'Contact', href: '#contact' }
   ];
 
