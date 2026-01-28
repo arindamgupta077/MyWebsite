@@ -8,6 +8,14 @@ export const certifications = [
     description: "Oracle Database Administration 2019 Certified Professional demonstrating advanced skills in Oracle Database administration."
   },
   {
+    id: 1,
+    title: "Oracle Certified Professional 2 (OCP)",
+    issuer: "Oracle",
+    date: "SEP 2025",
+    verificationLink: "https://catalog-education.oracle.com/ords/certview/sharebadge?id=7F82490598F4E71A49FF6FDFEABBC64EC4D676D92A20C8C0CCB4E7E8C73447E3", // Add your actual verification link here
+    description: "Oracle Database Administration 2019 Certified Professional demonstrating advanced skills in Oracle Database administration."
+  },
+  {
     id: 2,
     title: "Oracle Database SQL Certified Associate",
     issuer: "Oracle",

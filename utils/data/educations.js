@@ -2,7 +2,7 @@ export const educations = [
   {
     id: 2,
     title: "Oracle Certified Professional (OCP)",
-    duration: "2021",
+    duration: "2024",
     institution: "Oracle University",
   },
   {

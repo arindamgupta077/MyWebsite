@@ -15,7 +15,25 @@
 body {
   color: rgb(var(--foreground-rgb));
   background-color: #0d1224;
+  background-image: 
+    radial-gradient(circle at 15% 50%, rgba(76, 29, 149, 0.08) 0%, transparent 25%),
+    radial-gradient(circle at 85% 30%, rgba(219, 39, 119, 0.08) 0%, transparent 25%);
   -webkit-tap-highlight-color: transparent; /* Remove tap highlight on iOS */
+  min-height: 100vh;
+}
+
+/* Premium Glass & border effects */
+.glass-panel {
+  background: rgba(17, 25, 40, 0.7);
+  backdrop-filter: blur(12px); 
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.premium-gradient-text {
+  background: linear-gradient(135deg, #16f2b3 0%, #00d4ff 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 /* Mobile touch improvements */

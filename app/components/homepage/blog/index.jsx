@@ -16,12 +16,13 @@ function Blog({ blogs }) {
       </div>
 
       <div className="flex justify-center my-5 lg:py-8">
-        <div className="flex  items-center">
-          <span className="w-24 h-[2px] bg-[#1a1443]"></span>
-          <span className="bg-[#1a1443] w-fit text-white p-2 px-5 text-xl rounded-md">
+        <div className="flex  items-center gap-4">
+          <span className="w-24 h-[2px] bg-gradient-to-r from-transparent to-violet-500 rounded-full"></span>
+          <span className="text-white text-2xl lg:text-3xl font-bold uppercase tracking-widest relative">
             Blogs
+            <span className="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-violet-500 to-pink-500 opacity-50 blur-sm"></span>
           </span>
-          <span className="w-24 h-[2px] bg-[#1a1443]"></span>
+          <span className="w-24 h-[2px] bg-gradient-to-l from-transparent to-pink-500 rounded-full"></span>
         </div>
       </div>
 

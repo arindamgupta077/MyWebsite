@@ -1,4 +1,5 @@
 // @flow strict
+import { personalData } from '@/utils/data/personal-data';
 import Link from 'next/link';
 
 function Footer() {
@@ -10,7 +11,7 @@ function Footer() {
         </div>
         <div className="flex flex-col md:flex-row items-center justify-center">
           <p className="text-sm text-center">
-            © Developer Portfolio by <Link target="_blank" href="https://www.linkedin.com/in/abu-said-bd/" className="text-[#16f2b3]">Arindam Gupta</Link>
+            © Developer Portfolio by <Link target="_blank" href={personalData.linkedIn} className="text-[#16f2b3]">Arindam Gupta</Link>
           </p>
         </div>
       </div>

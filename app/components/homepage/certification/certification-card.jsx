@@ -24,7 +24,7 @@ function CertificationCard({ certification }) {
       <div className="flex items-start gap-4">
         {/* Certification Icon */}
         <div className="flex-shrink-0">
-          <div className="w-16 h-16 lg:w-20 lg:h-20 bg-gradient-to-r from-violet-600 to-pink-500 rounded-full flex items-center justify-center">
+          <div className="w-16 h-16 lg:w-20 lg:h-20 bg-white rounded-full flex items-center justify-center">
             <Image
               src={getIconForCertification(certification.title)}
               alt={certification.title}

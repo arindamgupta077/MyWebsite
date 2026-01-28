@@ -6,7 +6,7 @@ export const personalData = {
   // Updated to use the real contact details (contact section pulls from personalData)
   email: 'arindamgupta077@gmail.com',
   phone: '+91-8017074226',
-  address: 'India',
+  address: 'Kolkata, India',
   github: 'https://github.com/arindamgupta077',
   facebook: 'https://www.facebook.com/arindam.gupta.735/',
   linkedIn: 'https://www.linkedin.com/in/arindam-gupta-462240125/',
@@ -14,5 +14,5 @@ export const personalData = {
   stackOverflow: '',
   leetcode: "",
   devUsername: "arindamgupta077",
-  resume: "https://drive.google.com/file/d/your-resume-link/view?usp=sharing"
+  resume: "/AG_Resume.pdf"
 }

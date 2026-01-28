@@ -1,15 +1,21 @@
 // @flow strict
+"use client";
 
 import { personalData } from "@/utils/data/personal-data";
 import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
 import { BsGithub, BsLinkedin } from "react-icons/bs";
 import { FaFacebook, FaTwitterSquare } from "react-icons/fa";
 import { MdDownload } from "react-icons/md";
 import { RiContactsFill } from "react-icons/ri";
 import { SiLeetcode } from "react-icons/si";
+import Modal from "../../helper/modal";
+import ContactForm from "../contact/contact-form";
 
 function HeroSection() {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
     <section className="relative flex flex-col items-center justify-between py-4 lg:py-12">
       <Image
@@ -65,35 +71,38 @@ function HeroSection() {
             </Link>
           </div>
 
-          <div className="flex flex-col sm:flex-row items-center gap-3 w-full">
-            <Link href="#contact" className="bg-gradient-to-r to-pink-500 from-violet-600 p-[1px] rounded-full transition-all duration-300 hover:from-pink-500 hover:to-violet-600 w-full sm:w-auto">
-              <button className="px-4 sm:px-6 md:px-8 py-3 md:py-4 bg-[#0d1224] rounded-full border-none text-center text-xs md:text-sm font-medium uppercase tracking-wider text-[#ffff] no-underline transition-all duration-200 ease-out md:font-semibold flex items-center justify-center gap-1 hover:gap-3 w-full">
-                <span>Contact me</span>
-                <RiContactsFill size={16} />
-              </button>
-            </Link>
-
-            <Link className="flex items-center justify-center gap-1 hover:gap-3 rounded-full bg-gradient-to-r from-pink-500 to-violet-600 px-4 sm:px-6 md:px-8 py-3 md:py-4 text-center text-xs md:text-sm font-medium uppercase tracking-wider text-white no-underline transition-all duration-200 ease-out hover:text-white hover:no-underline md:font-semibold w-full sm:w-auto" role="button" target="_blank" href={personalData.resume}
+          <div className="flex flex-col sm:flex-row items-center gap-4 w-full justify-start">
+            <button
+              onClick={() => setIsOpen(true)}
+              className="group w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-violet-600 to-pink-500 rounded-full text-white text-sm font-semibold tracking-wider uppercase shadow-[0_0_20px_rgba(139,92,246,0.3)] hover:shadow-[0_0_30px_rgba(236,72,153,0.5)] transition-all duration-300 transform hover:scale-105 flex items-center justify-center gap-2"
             >
-              <span>Get Resume</span>
-              <MdDownload size={16} />
+              <span>Contact me</span>
+              <RiContactsFill size={18} className="group-hover:translate-x-1 transition-transform" />
+            </button>
+
+            <Link href={personalData.resume} target="_blank" className="group w-full sm:w-auto" download="Arindam_Gupta_Resume">
+              <button className="w-full sm:w-auto px-8 py-4 bg-[#0d1224] border border-violet-500/50 rounded-full text-white text-sm font-semibold tracking-wider uppercase hover:bg-violet-900/10 hover:border-violet-500 transition-all duration-300 transform hover:scale-105 flex items-center justify-center gap-2 relative overflow-hidden">
+                <span className="relative z-10 flex items-center gap-2">
+                  Get Resume
+                  <MdDownload size={18} className="group-hover:translate-y-1 transition-transform" />
+                </span>
+                <div className="absolute inset-0 bg-gradient-to-r from-violet-600/20 to-pink-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              </button>
             </Link>
           </div>
 
         </div>
-        <div className="order-1 lg:order-2 from-[#0d1224] border-[#1b2c68a0] relative rounded-lg border bg-gradient-to-r to-[#0a0d37]">
-          <div className="flex flex-row">
-            <div className="h-[1px] w-full bg-gradient-to-r from-transparent via-pink-500 to-violet-600"></div>
-            <div className="h-[1px] w-full bg-gradient-to-r from-violet-600 to-transparent"></div>
-          </div>
-          <div className="px-4 lg:px-8 py-5">
+        <div className="order-1 lg:order-2 from-[#0d1224] border-[#1b2c68a0] relative rounded-lg border bg-gradient-to-r to-[#0a0d37] shadow-2xl shadow-indigo-500/20">
+          <div className="flex flex-row p-4 items-center bg-[#0d1224]/50 rounded-t-lg border-b border-indigo-900/50 backdrop-blur-sm">
             <div className="flex flex-row space-x-2">
-              <div className="h-3 w-3 rounded-full bg-red-400"></div>
-              <div className="h-3 w-3 rounded-full bg-orange-400"></div>
-              <div className="h-3 w-3 rounded-full bg-green-200"></div>
+              <div className="h-3 w-3 rounded-full bg-[#ff5f56]"></div>
+              <div className="h-3 w-3 rounded-full bg-[#ffbd2e]"></div>
+              <div className="h-3 w-3 rounded-full bg-[#27c93f]"></div>
             </div>
+            <div className="ml-4 text-xs text-slate-400 font-mono">oracle_admin_portfolio.sql</div>
           </div>
-          <div className="overflow-hidden border-t-[2px] border-indigo-900 px-4 lg:px-8 py-4 lg:py-8">
+          
+          <div className="overflow-hidden px-4 lg:px-8 py-4 lg:py-8">
             <code className="font-mono text-xs md:text-sm lg:text-base">
               <div>
                 <span className="text-pink-500">DECLARE</span>
@@ -222,6 +231,9 @@ function HeroSection() {
           </div>
         </div>
       </div>
+      <Modal isOpen={isOpen} onClose={() => setIsOpen(false)} title="Get in Touch">
+        <ContactForm showTitle={false} />
+      </Modal>
     </section>
   );
 };

@@ -8,16 +8,16 @@ function AboutSection() {
   return (
     <div id="about" className="my-12 lg:my-16 relative">
       <div className="hidden lg:flex flex-col items-center absolute top-16 -right-8">
-        <span className="bg-[#1a1443] w-fit text-white rotate-90 p-2 px-5 text-xl rounded-md">
+        <span className="bg-gradient-to-r from-violet-600 to-indigo-600 w-fit text-white rotate-90 p-2 px-5 text-xl rounded-md shadow-lg shadow-violet-500/20">
           ABOUT ME
         </span>
-        <span className="h-36 w-[2px] bg-[#1a1443]"></span>
+        <span className="h-36 w-[2px] bg-gradient-to-b from-violet-600 to-transparent"></span>
       </div>
       
       {/* Mobile section title */}
       <div className="lg:hidden mb-8">
         <div className="flex items-center justify-center relative">
-          <span className="bg-[#1a1443] w-fit text-white px-3 py-2 text-sm font-medium rounded-md whitespace-nowrap">
+          <span className="bg-gradient-to-r from-violet-600 to-indigo-600 w-fit text-white px-5 py-3 text-xl rounded-full shadow-lg shadow-violet-500/20">
             ABOUT ME
           </span>
         </div>

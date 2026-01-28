@@ -5,12 +5,21 @@ import { useState, useEffect } from 'react';
 
 function Navbar() {
   const [isAtTop, setIsAtTop] = useState(true);
+  const [isVisible, setIsVisible] = useState(true);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
       setIsAtTop(currentScrollY <= 20);
+      
+      // Check if we reached the experience section
+      const experienceSection = document.getElementById('experience');
+      if (experienceSection) {
+        const experienceTop = experienceSection.offsetTop;
+        // Hide navbar when user scrolls near the experience section (minus some buffer)
+        setIsVisible(currentScrollY < experienceTop - 100);
+      }
       
       // Close mobile menu when scrolling
       if (isMobileMenuOpen) {
@@ -70,11 +79,11 @@ function Navbar() {
 
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 transform ${
-      isAtTop ? 'translate-y-0' : '-translate-y-full'
-    } bg-[#0a0f1c]/98 backdrop-blur-md border-b border-[#1b2c68]/60 shadow-lg shadow-[#0d1224]/30`}>
+      !isVisible ? '-translate-y-full' : (isAtTop ? 'translate-y-0 py-4 lg:py-5 bg-transparent border-transparent' : 'translate-y-0 py-2 lg:py-3 bg-[#0d1224]/80 backdrop-blur-xl border-b border-violet-500/10 shadow-lg shadow-black/10')
+    }`}>
       <div className="max-w-[92rem] mx-auto px-6 sm:px-12">
         {/* Desktop Navigation */}
-        <div className="hidden md:flex items-center justify-between py-4 lg:py-6">
+        <div className="hidden md:flex items-center justify-between">
           <div className="flex flex-shrink-0 items-center">
             <Link
               href="/"
