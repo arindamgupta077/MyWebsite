@@ -11,9 +11,59 @@ import "./css/globals.scss";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "Portfolio of Arindam Gupta - Oracle Database Administrator",
+  title: "Arindam Gupta - Expert Oracle Database Administrator | Best Oracle DBA Portfolio",
   description:
-    "This is the portfolio of Arindam Gupta. I am an experienced Oracle Database Administrator with expertise in Oracle Cloud Infrastructure, Oracle RAC, Oracle DataGuard, Oracle Autonomous Database, and Oracle APEX. I am passionate about database optimization, GenAI, and Data Engineering.",
+    "Welcome to the portfolio of Arindam Gupta, an expert Oracle Database Administrator (DBA). Specializing in Oracle Cloud Infrastructure (OCI), Oracle RAC, DataGuard, Autonomous Database, and performance tuning. If you are looking for the best Oracle DBA, explore my projects, skills, and certifications here.",
+  keywords: [
+    "Oracle DBA",
+    "Oracle Database Administrator",
+    "Best Oracle DBA",
+    "Oracle Cloud Infrastructure",
+    "OCI",
+    "Oracle RAC",
+    "Oracle DataGuard",
+    "Autonomous Database",
+    "Database Performance Tuning",
+    "Arindam Gupta",
+    "DBA Portfolio",
+    "Freelance Oracle DBA"
+  ],
+  authors: [{ name: "Arindam Gupta" }],
+  creator: "Arindam Gupta",
+  publisher: "Arindam Gupta",
+  openGraph: {
+    title: "Arindam Gupta - Expert Oracle Database Administrator | Best Oracle DBA Portfolio",
+    description: "Explore the portfolio of Arindam Gupta, an experienced Oracle DBA specializing in OCI, RAC, and DataGuard. View certifications and projects.",
+    url: "https://arindamgupta.dev", // Replace with actual domain if available
+    siteName: "Arindam Gupta Portfolio",
+    images: [
+      {
+        url: "/profile.png", // Assuming this image exists based on personal-data.js
+        width: 800,
+        height: 600,
+        alt: "Arindam Gupta - Oracle DBA",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Arindam Gupta - Expert Oracle Database Administrator",
+    description: "Portfolio of Arindam Gupta - Oracle DBA, OCI, RAC, and DataGuard expert.",
+    images: ["/profile.png"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
   // Explicitly declare favicon so it reliably appears (Next.js also auto-detects app/favicon.ico, but this is deterministic)
   icons: {
     icon: [
