@@ -11,7 +11,7 @@ export const certifications = [
     id: 1,
     title: "Oracle ADB 2025 Certified Professional",
     issuer: "Oracle",
-    date: "SEP 2025",
+    date: "OCT 2025",
     verificationLink: "https://catalog-education.oracle.com/ords/certview/sharebadge?id=707FAD59E162751BEFA389541AB5553F9A324B7DB147CD27F64570D3DCF9DB9E", // Add your actual verification link here
     description: "Certified specialist in Oracle Autonomous Database, skilled in provisioning, managing, and monitoring Autonomous Database workloads on Shared Exadata Infrastructure."
   },
@@ -19,7 +19,7 @@ export const certifications = [
     id: 1,
     title: "OCI 2025 Certified DevOps Professional",
     issuer: "Oracle",
-    date: "SEP 2025",
+    date: "OCT 2025",
     verificationLink: "https://catalog-education.oracle.com/ords/certview/sharebadge?id=BDB56EF0AC0B13C1E86ABF8E0FC4E6BFD536B64BEEF9FF8E02A7E11414A2E861", // Add your actual verification link here
     description: "Demonstrated proficiency in Oracle Cloud Infrastructure (OCI) DevOps/DevSecOps practices, including CI/CD pipelines, containerization, and infrastructure as code (IaC)."
   },
@@ -27,7 +27,7 @@ export const certifications = [
     id: 1,
     title: "OCI 2025 Certified Generative AI Professional",
     issuer: "Oracle",
-    date: "SEP 2025",
+    date: "OCT 2025",
     verificationLink: "https://catalog-education.oracle.com/ords/certview/sharebadge?id=E50195EE63C995828786CA4423162DDD11EC9ACB6E2A9ED0EE1C4AA1BF7BFBEA", // Add your actual verification link here
     description: "Certified expert in building Large Language Model (LLM) applications using OCI Generative AI service, with deep knowledge of LLM architecture and fine-tuning."
   },
@@ -35,7 +35,7 @@ export const certifications = [
     id: 1,
     title: "OCI 2025 Certified Architect Associate",
     issuer: "Oracle",
-    date: "SEP 2025",
+    date: "OCT 2025",
     verificationLink: "https://catalog-education.oracle.com/ords/certview/sharebadge?id=62FFFAEAAFA01D87796041264096BED1F1291ED7E688E1CB132AF2C08DDC2F7D", // Add your actual verification link here
     description: "Validated knowledge in designing secure, scalable, and highly available infrastructure solutions on Oracle Cloud Infrastructure (OCI)."
   },
@@ -43,7 +43,7 @@ export const certifications = [
     id: 1,
     title: "OCI 2025 Certified Foundations Associate",
     issuer: "Oracle",
-    date: "SEP 2025",
+    date: "AUG 2025",
     verificationLink: "https://catalog-education.oracle.com/ords/certview/sharebadge?id=DF4BEA8FBAFD822CF46CFA76B1CE46EAA4B51BA9C601340DBF5C000F75FAFFC2", // Add your actual verification link here
     description: "Fundamental understanding of Oracle Cloud Infrastructure (OCI) services, cloud computing concepts, and OCI security and compliance models."
   },
