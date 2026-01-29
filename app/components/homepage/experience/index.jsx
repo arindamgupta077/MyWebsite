@@ -14,6 +14,36 @@ function Experience() {
   const [selectedExperience, setSelectedExperience] = useState(null);
   const [isOpen, setIsOpen] = useState(false);
 
+  // Calculate duration function
+  const calculateDuration = (duration) => {
+    const cleanDuration = duration.replace(/[()]/g, '').trim();
+    const [startStr, endStr] = cleanDuration.split('-').map(s => s.trim());
+
+    if (!startStr || !endStr) return duration;
+
+    const parseDate = (dateStr) => {
+      if (dateStr.toLowerCase() === 'present') return new Date();
+      return new Date(dateStr);
+    };
+
+    const startDate = parseDate(startStr);
+    const endDate = parseDate(endStr);
+    
+    if (isNaN(startDate.getTime()) || isNaN(endDate.getTime())) return duration;
+
+    let diffMonths = (endDate.getFullYear() - startDate.getFullYear()) * 12 + (endDate.getMonth() - startDate.getMonth());
+    
+    if (diffMonths < 0) diffMonths = 0;
+
+    const years = Math.floor(diffMonths / 12);
+    const months = diffMonths % 12;
+
+    const yearsStr = `${years} ${years === 1 ? "Year" : "Years"}`;
+    const monthsStr = `${months} ${months === 1 ? "Month" : "Months"}`;
+
+    return `${yearsStr} ${monthsStr}`;
+  };
+
   // Calculate total experience
   const startDate = new Date('2021-01-07');
   const currentDate = new Date();
@@ -87,10 +117,15 @@ function Experience() {
                           height={200}
                           className="absolute bottom-0 opacity-80"
                         />
-                        <div className="flex justify-center">
+                        <div className="flex justify-center items-center gap-2">
                           <p className="text-xs sm:text-sm text-[#16f2b3]">
-                            {experience.duration}
+                            {calculateDuration(experience.duration)}
                           </p>
+                          {experience.duration.toLowerCase().includes("present") && (
+                            <span className="bg-[#16f2b3] text-[#1a1443] px-2 py-0.5 rounded text-xs font-medium">
+                              Present
+                            </span>
+                          )}
                         </div>
                         <div className="flex items-center gap-x-8 px-3 py-5">
                           <div className="text-violet-500  transition-all duration-300 hover:scale-125">
