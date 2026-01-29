@@ -1,10 +1,21 @@
+// @flow strict
+"use client";
+import { useEffect, useState } from 'react';
+import { createPortal } from 'react-dom';
 import { IoClose } from 'react-icons/io5';
 
 function Modal({ isOpen, onClose, title, children }) {
-  if (!isOpen) return null;
+  const [mounted, setMounted] = useState(false);
 
-  return (
-    <div className="fixed inset-0 z-[100] flex items-center justify-center overflow-y-auto overflow-x-hidden bg-black/70 backdrop-blur-sm p-4 md:p-8">
+  useEffect(() => {
+    setMounted(true);
+    return () => setMounted(false);
+  }, []);
+
+  if (!isOpen || !mounted) return null;
+
+  return createPortal(
+    <div className="fixed inset-0 z-[9999] flex items-center justify-center overflow-y-auto overflow-x-hidden bg-black/70 backdrop-blur-sm p-4 md:p-8">
       <div 
         className="relative w-full max-w-4xl max-h-[90vh] rounded-2xl bg-[#101123] p-6 md:p-10 shadow-2xl shadow-violet-500/20 border border-[#2a2e5a] overflow-y-auto"
         onClick={(e) => e.stopPropagation()}
@@ -26,7 +37,8 @@ function Modal({ isOpen, onClose, title, children }) {
       
       {/* Close modal when clicking outside */}
       <div className="absolute inset-0 -z-10" onClick={onClose}></div>
-    </div>
+    </div>,
+    document.body
   );
 }
 

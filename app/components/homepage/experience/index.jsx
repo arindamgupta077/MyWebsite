@@ -96,13 +96,14 @@ function Experience() {
                           <div className="text-violet-500  transition-all duration-300 hover:scale-125">
                             {
                               experience.logo ? (
-                                <Image
-                                  src={experience.logo}
-                                  alt={experience.company}
-                                  width={80}
-                                  height={80}
-                                  className="rounded-lg"
-                                />
+                                <div className="relative w-24 h-12 lg:w-28 lg:h-16">
+                                  <Image
+                                    src={experience.logo}
+                                    alt={experience.company}
+                                    fill
+                                    className="rounded-lg object-contain"
+                                  />
+                                </div>
                               ) : (
                                 <BsPersonWorkspace size={36} />
                               )
@@ -112,7 +113,7 @@ function Experience() {
                             <p className="text-base sm:text-xl mb-2 font-medium uppercase">
                               {experience.title}
                             </p>
-                            <p className="text-sm sm:text-base">
+                            <p className="text-sm sm:text-base text-amber-300">
                               {experience.company}
                             </p>
                           </div>

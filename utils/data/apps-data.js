@@ -21,15 +21,5 @@ export const appsData = [
         category: 'Web Application',
         featured: true
     },
-    {
-        id: 3,
-        name: 'YourGPT',
-        description: 'YourGPT is a futuristic, neon-themed AI chat PWA that combines intelligent conversations, specialized AI tools, and advanced customization for a powerful all-in-one assistant experience.',
-        githubUrl: 'https://github.com/arindamgupta077/YourGPT.git',
-        liveUrl: 'https://yourgpt.onrender.com/',
-        thumbnail: '/image/crefin.png',
-        technologies: ['Gemini', 'PostgreSQL Database', 'React.js', 'Tailwind CSS' ],
-        category: 'AI Tool',
-        featured: false
-    }];
+  ];
    

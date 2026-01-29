@@ -164,7 +164,7 @@ function Navbar() {
               href="/"
               className="relative group cursor-pointer transform transition-all duration-700 hover:scale-105 premium-header"
             >
-              <div className="text-lg sm:text-xl font-black tracking-wider relative luxury-text">
+              <div className="text-2xl sm:text-3xl font-black tracking-wider relative luxury-text">
                 {/* Main text with enhanced gradient for mobile */}
                 <span className="gradient-text
                                drop-shadow-[0_0_12px_rgba(22,242,179,0.4)] 
