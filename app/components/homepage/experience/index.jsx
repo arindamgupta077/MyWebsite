@@ -108,7 +108,7 @@ function Experience() {
               {
                 experiences.map(experience => (
                   <div key={experience.id} onClick={() => handleOpenModal(experience)} className="cursor-pointer group">
-                    <GlowCard identifier={`experience-${experience.id}`}>
+                    <GlowCard identifier={`experience-${experience.id}`} className="shadow-[0_20px_40px_-10px_rgba(0,0,0,0.8)] translate-y-[-12px] z-10 hover:translate-y-[-16px] hover:shadow-[0_25px_50px_-12px_rgba(0,0,0,0.9)]">
                       <div className="p-3 relative overflow-hidden">
                         <Image
                           src="/blur-23.svg"
@@ -128,7 +128,7 @@ function Experience() {
                           )}
                         </div>
                         <div className="flex items-center gap-x-8 px-3 py-5">
-                          <div className="text-violet-500  transition-all duration-300 hover:scale-125">
+                          <div className="text-violet-500">
                             {
                               experience.logo ? (
                                 <div className="relative w-24 h-12 lg:w-28 lg:h-16">

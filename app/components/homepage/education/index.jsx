@@ -45,7 +45,7 @@ function Education() {
             <div className="flex flex-col gap-6">
               {
                 educations.map(education => (
-                  <GlowCard key={education.id} identifier={`education-${education.id}`}>
+                  <GlowCard key={education.id} identifier={`education-${education.id}`} className="shadow-[0_20px_40px_-10px_rgba(0,0,0,0.8)] translate-y-[-12px] z-10">
                     <div className="p-3 relative text-white overflow-hidden">
                       <Image
                         src="/blur-23.svg"

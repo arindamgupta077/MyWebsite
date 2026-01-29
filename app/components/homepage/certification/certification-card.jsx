@@ -34,7 +34,7 @@ function CertificationCard({ certification, identifier }) {
   };
 
   return (
-    <GlowCard identifier={identifier}>
+    <GlowCard identifier={identifier} className="shadow-[0_20px_40px_-10px_rgba(0,0,0,0.8)] translate-y-[-12px] z-10 hover:translate-y-[-16px] hover:shadow-[0_25px_50px_-12px_rgba(0,0,0,0.9)]">
       <a 
         href={certification.verificationLink || '#'} 
         target="_blank" 
