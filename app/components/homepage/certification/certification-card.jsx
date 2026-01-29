@@ -39,7 +39,7 @@ function CertificationCard({ certification, identifier }) {
         href={certification.verificationLink || '#'} 
         target="_blank" 
         rel="noopener noreferrer"
-        className="block p-4 lg:p-6 relative text-white h-full overflow-hidden no-underline"
+        className="block p-3 sm:p-4 lg:p-6 relative text-white h-full overflow-hidden no-underline"
       >
         <Image
           src="/blur-23.svg"
@@ -48,16 +48,16 @@ function CertificationCard({ certification, identifier }) {
           height={200}
           className="absolute bottom-0 left-0 opacity-80 -z-10"
         />
-        <div className="flex items-start gap-4 z-10 relative">
+        <div className="flex items-start gap-3 sm:gap-4 z-10 relative">
           {/* Certification Icon */}
           <div className="flex-shrink-0">
-            <div className="w-16 h-16 lg:w-20 lg:h-20 bg-white rounded-full flex items-center justify-center">
+            <div className="w-12 h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20 bg-white rounded-full flex items-center justify-center">
               <Image
                 src={getIconForCertification(certification)}
                 alt={certification.title}
                 width={60}
                 height={60}
-                className="rounded-lg"
+                className="rounded-lg w-8 h-8 sm:w-12 sm:h-12 lg:w-14 lg:h-14 transition-all duration-300"
               />
             </div>
           </div>
@@ -65,7 +65,7 @@ function CertificationCard({ certification, identifier }) {
           {/* Certification Details */}
           <div className="flex-1">
             <div className="flex items-start justify-between mb-2">
-              <h3 className="text-lg lg:text-xl font-semibold text-[#ec4899] group-hover:text-violet-500 transition-colors duration-300">
+              <h3 className="text-sm sm:text-base lg:text-xl font-semibold text-[#ec4899] group-hover:text-violet-500 transition-colors duration-300">
                 {certification.title}
               </h3>
               {certification.verificationLink && certification.verificationLink !== "#" && (
@@ -77,7 +77,7 @@ function CertificationCard({ certification, identifier }) {
               )}
             </div>
 
-            <div className="flex items-center gap-2 mb-3">
+            <div className="flex items-center gap-2 mb-3 text-xs sm:text-sm">
               <span className="text-[#16f2b3] font-medium">{certification.issuer}</span>
               {certification.date && (
                 <>
@@ -90,7 +90,7 @@ function CertificationCard({ certification, identifier }) {
               )}
             </div>
 
-            <p className="text-sm lg:text-base text-[#d3d8e8] line-clamp-3">
+            <p className="text-xs sm:text-sm lg:text-base text-[#d3d8e8] line-clamp-3">
               {certification.description}
             </p>
           </div>
