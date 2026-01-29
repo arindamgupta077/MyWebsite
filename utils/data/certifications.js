@@ -9,7 +9,39 @@ export const certifications = [
   },
   {
     id: 1,
-    title: "Oracle Certified Professional 2 (OCP)",
+    title: "Oracle ADB 2025 Certified Professional",
+    issuer: "Oracle",
+    date: "SEP 2025",
+    verificationLink: "https://catalog-education.oracle.com/ords/certview/sharebadge?id=7F82490598F4E71A49FF6FDFEABBC64EC4D676D92A20C8C0CCB4E7E8C73447E3", // Add your actual verification link here
+    description: "Oracle Database Administration 2019 Certified Professional demonstrating advanced skills in Oracle Database administration."
+  },
+    {
+    id: 1,
+    title: "OCI 2025 Certified DevOps Professional",
+    issuer: "Oracle",
+    date: "SEP 2025",
+    verificationLink: "https://catalog-education.oracle.com/ords/certview/sharebadge?id=7F82490598F4E71A49FF6FDFEABBC64EC4D676D92A20C8C0CCB4E7E8C73447E3", // Add your actual verification link here
+    description: "Oracle Database Administration 2019 Certified Professional demonstrating advanced skills in Oracle Database administration."
+  },
+    {
+    id: 1,
+    title: "OCI 2025 Certified Generative AI Professional",
+    issuer: "Oracle",
+    date: "SEP 2025",
+    verificationLink: "https://catalog-education.oracle.com/ords/certview/sharebadge?id=7F82490598F4E71A49FF6FDFEABBC64EC4D676D92A20C8C0CCB4E7E8C73447E3", // Add your actual verification link here
+    description: "Oracle Database Administration 2019 Certified Professional demonstrating advanced skills in Oracle Database administration."
+  },
+    {
+    id: 1,
+    title: "OCI 2025 Certified Architect Associate",
+    issuer: "Oracle",
+    date: "SEP 2025",
+    verificationLink: "https://catalog-education.oracle.com/ords/certview/sharebadge?id=7F82490598F4E71A49FF6FDFEABBC64EC4D676D92A20C8C0CCB4E7E8C73447E3", // Add your actual verification link here
+    description: "Oracle Database Administration 2019 Certified Professional demonstrating advanced skills in Oracle Database administration."
+  },
+    {
+    id: 1,
+    title: "OCI 2025 Certified Foundations Associate",
     issuer: "Oracle",
     date: "SEP 2025",
     verificationLink: "https://catalog-education.oracle.com/ords/certview/sharebadge?id=7F82490598F4E71A49FF6FDFEABBC64EC4D676D92A20C8C0CCB4E7E8C73447E3", // Add your actual verification link here
@@ -49,19 +81,11 @@ export const certifications = [
   },
   {
     id: 6,
-    title: "Academy Accreditation - Generative AI Fundamentals",
+    title: "Generative AI Fundamentals",
     issuer: "Databricks",
     date: "May 2025",
     verificationLink: "https://credentials.databricks.com/990dcd54-1d67-4485-975b-0d00875cfd27", // Add your actual verification link here
     description: "Databricks Academy Accreditation in Generative AI Fundamentals (Credential ID: 145472521). Expires May 2027."
-  },
-  {
-    id: 7,
-    title: "AI Conversant Certification",
-    issuer: "EdCast by Cornerstone",
-    date: "Feb 2024",
-    verificationLink: "https://dxclearning.edcast.com/verify_badge/49IJnxPhYp?user_id=102657033&timestamp=1713205635316&edCast?latest", // Add your actual verification link here
-    description: "AI Conversant Certification covering Artificial Intelligence (AI) and Prompt Engineering skills."
   },
   {
     id: 8,
